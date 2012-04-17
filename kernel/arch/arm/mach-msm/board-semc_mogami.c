@@ -184,13 +184,12 @@
 #else
 #define MSM_FB_SIZE		0x500000
 #endif /* CONFIG_FB_MSM_HDMI_SII9024A_PANEL */
-#define MSM_GPU_PHYS_SIZE       SZ_4M
-#define MSM_PMEM_CAMERA_SIZE    0x3200000
-#define MSM_PMEM_ADSP_SIZE      0x1000000
+#define MSM_PMEM_CAMERA_SIZE    0x2800000
+#define MSM_PMEM_ADSP_SIZE      0x1800000
 #define PMEM_KERNEL_EBI1_SIZE   0x600000
 
 #define PMIC_GPIO_INT		27
-#define PMIC_VREG_WLAN_LEVEL	2900
+#define PMIC_VREG_WLAN_LEVEL	2500
 #define PMIC_GPIO_SD_DET	22
 #ifdef CONFIG_PMIC_GPIO_25
 #define PMIC_GPIO_SD_POWER	25
@@ -2846,7 +2845,7 @@ static struct bma250_platform_data bma250_platform_data = {
 #ifdef CONFIG_INPUT_APDS9702
 
 #define APDS9702_DOUT_GPIO   88
-#define APDS9702_VDD_VOLTAGE 2900
+#define APDS9702_VDD_VOLTAGE 2500
 #define APDS9702_WAIT_TIME   5000
 
 static int apds9702_gpio_setup(int request)
@@ -4518,14 +4517,6 @@ static void __init fb_size_setup(char **p)
 
 __early_param("fb_size=", fb_size_setup);
 
-static unsigned gpu_phys_size = MSM_GPU_PHYS_SIZE;
-static void __init gpu_phys_size_setup(char **p)
-{
-	gpu_phys_size = memparse(*p, p);
-}
-
-__early_param("gpu_phys_size=", gpu_phys_size_setup);
-
 static unsigned pmem_adsp_size = MSM_PMEM_ADSP_SIZE;
 static void __init pmem_adsp_size_setup(char **p)
 {
@@ -4570,17 +4561,6 @@ static void __init msm7x30_allocate_memory_regions(void)
 	msm_fb_resources[0].end = msm_fb_resources[0].start + size - 1;
 	pr_info("allocating %lu bytes at %p (%lx physical) for fb\n",
 		size, addr, __pa(addr));
-
-/*
-	size = gpu_phys_size;
-	if (size) {
-		addr = alloc_bootmem(size);
-		kgsl_resources[1].start = __pa(addr);
-		kgsl_resources[1].end = kgsl_resources[1].start + size - 1;
-		pr_info("allocating %lu bytes at %p (%lx physical) for "
-			"KGSL\n", size, addr, __pa(addr));
-	}
-*/
 
 	size = pmem_adsp_size;
 
