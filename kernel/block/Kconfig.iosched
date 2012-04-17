@@ -40,6 +40,21 @@ config IOSCHED_CFQ
 	  working environment, suitable for desktop systems.
 	  This is the default I/O scheduler.
 
+config IOSCHED_SIO
+	tristate "VR I/O scheduler"
+
+config IOSCHED_VR
+	tristate "SIO I/O scheduler"
+
+config IOSCHED_BFQ
+	tristate "BFQ I/O scheduler"
+
+
+
+
+
+
+
 choice
 	prompt "Default I/O scheduler"
 	default DEFAULT_CFQ
