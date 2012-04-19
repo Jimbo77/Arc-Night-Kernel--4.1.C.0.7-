@@ -137,7 +137,7 @@ config CPU_FREQ_GOV_PERFORMANCE
 
 	  If in doubt, say Y.
 
-onfig CPU_FREQ_GOV_INTERACTIVEX
+config CPU_FREQ_GOV_INTERACTIVEX
 	tristate "'InteractiveX' governor"
 	help
 	  This cpufreq governor sets the frequency statically to the
@@ -148,7 +148,19 @@ onfig CPU_FREQ_GOV_INTERACTIVEX
 
 	  If in doubt, say Y.
 
-onfig CPU_FREQ_GOV_LAGFREE
+config CPU_FREQ_GOV_INTERACTIVE
+	tristate "'Interactive' governor"
+	help
+	  This cpufreq governor sets the frequency statically to the
+	  highest available CPU frequency.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called cpufreq_performance.
+
+	  If in doubt, say Y.
+
+
+config CPU_FREQ_GOV_LAGFREE
 	tristate "'lagfree' governor"
 	help
 	  This cpufreq governor sets the frequency statically to the
