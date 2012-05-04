@@ -162,7 +162,7 @@
 #ifdef CONFIG_INPUT_BMA250
 #define BMA250_GPIO			(51)
 #endif
-#define SPEAKER_POWERAMP_GPIO		(82)
+#define SPEAKER_POWERAMP_GPIO		(90)
 #define AKM8975_GPIO			(92)
 #define NOVATEK_GPIO_RESET		(157)
 
@@ -185,7 +185,7 @@
 #define MSM_FB_SIZE		0x500000
 #endif /* CONFIG_FB_MSM_HDMI_SII9024A_PANEL */
 #define MSM_GPU_PHYS_SIZE       SZ_4M
-#define MSM_PMEM_CAMERA_SIZE    0x3200000
+#define MSM_PMEM_CAMERA_SIZE    0x3000000
 #define MSM_PMEM_ADSP_SIZE      0x1000000
 #define PMEM_KERNEL_EBI1_SIZE   0x600000
 
@@ -203,7 +203,7 @@
 #define GPIO_BQ27520_SOC_INT 20
 #define LIPO_BAT_MAX_VOLTAGE 4200
 #define LIPO_BAT_MIN_VOLTAGE 3000
-#define FULLY_CHARGED_AND_RECHARGE_CAP 95
+#define FULLY_CHARGED_AND_RECHARGE_CAP 97
 
 #if defined(CONFIG_LM3560) || defined(CONFIG_LM3561)
 #include <linux/lm356x.h>
@@ -2634,7 +2634,7 @@ struct bq27520_platform_data bq27520_platform_data = {
 	.battery_dev_name = SEMC_BDATA_NAME,
 #endif
 	.polling_lower_capacity = FULLY_CHARGED_AND_RECHARGE_CAP,
-	.polling_upper_capacity = 100,
+	.polling_upper_capacity = 98,
 	.udatap = bq27520_block_table,
 #ifdef CONFIG_BATTERY_CHARGALG
 	.disable_algorithm = battery_chargalg_disable,
