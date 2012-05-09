@@ -162,7 +162,7 @@
 #ifdef CONFIG_INPUT_BMA250
 #define BMA250_GPIO			(51)
 #endif
-#define SPEAKER_POWERAMP_GPIO		(90)
+#define SPEAKER_POWERAMP_GPIO		(82)
 #define AKM8975_GPIO			(92)
 #define NOVATEK_GPIO_RESET		(157)
 
@@ -190,7 +190,7 @@
 #define PMEM_KERNEL_EBI1_SIZE   0x600000
 
 #define PMIC_GPIO_INT		27
-#define PMIC_VREG_WLAN_LEVEL	2900
+#define PMIC_VREG_WLAN_LEVEL	2500
 #define PMIC_GPIO_SD_DET	22
 #ifdef CONFIG_PMIC_GPIO_25
 #define PMIC_GPIO_SD_POWER	25
@@ -201,9 +201,9 @@
 #define PM8058_GPIO_SYS_TO_PM(sys_gpio)    (sys_gpio - NR_GPIO_IRQS)
 
 #define GPIO_BQ27520_SOC_INT 20
-#define LIPO_BAT_MAX_VOLTAGE 4200
+#define LIPO_BAT_MAX_VOLTAGE 4100
 #define LIPO_BAT_MIN_VOLTAGE 3000
-#define FULLY_CHARGED_AND_RECHARGE_CAP 92
+#define FULLY_CHARGED_AND_RECHARGE_CAP 90
 
 #if defined(CONFIG_LM3560) || defined(CONFIG_LM3561)
 #include <linux/lm356x.h>
@@ -2634,7 +2634,7 @@ struct bq27520_platform_data bq27520_platform_data = {
 	.battery_dev_name = SEMC_BDATA_NAME,
 #endif
 	.polling_lower_capacity = FULLY_CHARGED_AND_RECHARGE_CAP,
-	.polling_upper_capacity = 98,
+	.polling_upper_capacity = 96,
 	.udatap = bq27520_block_table,
 #ifdef CONFIG_BATTERY_CHARGALG
 	.disable_algorithm = battery_chargalg_disable,
