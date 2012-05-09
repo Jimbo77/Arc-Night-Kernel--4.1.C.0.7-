@@ -2320,8 +2320,8 @@ bd->bat_ps.use_for_apm = 1;
 bd->clientp = client;
 bd->rom_clientp = rom_clientp;
 
-bd->polling_lower_capacity = 95;
-bd->polling_upper_capacity = 100;
+bd->polling_lower_capacity = 90;
+bd->polling_upper_capacity = 96;
 bd->run_init_after_rom = false;
 bd->sealed = -1;
 pdata = client->dev.platform_data;
