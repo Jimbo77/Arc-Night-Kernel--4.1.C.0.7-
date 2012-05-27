@@ -96,10 +96,10 @@
 #define TP_CHK_NINT_TMO(byte)	((byte & 0x80) >> 7)
 #define TP_CHK_MOVE(byte, offset) (((byte >> offset) & TP_MASK_FNGR_MOVE) >> 3)
 #define TP_CHK_DOWN(byte, offset) (((byte >> offset) & TP_MASK_FNGR_DOWN) >> 2)
-#define TP_SHIFT_FNGR_STAT_MS	10
+#define TP_SHIFT_FNGR_STAT_MS	4
 #define TP_SHIFT_FNGR_STAT_LS	0
 
-#define TP_TOUCH_CNT_MAX	10
+#define TP_TOUCH_CNT_MAX	4
 
 #define TP_TRACK_ACTIVE		1
 #define TP_TRACK_DELETE		2
